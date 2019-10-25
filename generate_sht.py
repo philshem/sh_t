@@ -41,7 +41,7 @@ def main():
 				if diff_letters(x, y) == 1:
 					pairs.setdefault(x, []).append(y)
 					pairs.setdefault(y, []).append(x)
-					break # debugging
+					#break # debugging
 			
 			result[k] = [{ "target": key, "match": head, } for key, (head, *tail) in pairs.items() if not tail]
 			print('With',k,'letters, there are',len(result[k]),'found results, in ',(datetime.now() - runtime).seconds, 'seconds')
