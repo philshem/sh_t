@@ -36,7 +36,10 @@ class color:
 import os
 # file paths
 WORD_LIST_PATH = 'word_lists' + os.sep + 'TWL06.txt'
-PUZZLE_DATA_PATH = 'data'
+PUZZLE_DATA_PATH = 'data' + os.sep + 'puzzles.csv'
+# debugging
+#PUZZLE_DATA_PATH = 'data' + os.sep + 'debug.puzzles.csv'
+
 
 # delimiter for data csv file
 DELIM = '\t'

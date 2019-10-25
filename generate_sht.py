@@ -27,7 +27,7 @@ def main():
 		d[len(w)].append(w)
 
 	# output file
-	with open(params.PUZZLE_DATA_PATH + os.sep + 'puzzles.csv','w') as f:
+	with open(params.PUZZLE_DATA_PATH,'w') as f:
 
 		# loop over dict of words
 		for k,w in d.items():

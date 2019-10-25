@@ -24,7 +24,7 @@ def main():
 
 
 def read_words():
-	with open(params.PUZZLE_DATA_PATH + os.sep + 'puzzles.csv','r') as f:
+	with open(params.PUZZLE_DATA_PATH,'r') as f:
 		data = f.readlines()
 	
 	word_pairs = []
