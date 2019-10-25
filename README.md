@@ -4,12 +4,15 @@ another word puzzle game (under heavy development)
 
 #### get the code
 
-    git pull https://github.com/philshem/sh_t.git
+    git clone https://github.com/philshem/sh_t.git
 
 #### run the code
 
     cd sh_t
+    git pull
     python3 sh_t.py 
+
+The `git pull` step is optional, but because the code is under heavy development, I suggest it.
 
 #### play sh_t
 
