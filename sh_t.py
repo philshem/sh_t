@@ -12,7 +12,16 @@ from datetime import datetime
 def main():
 
 	pzl = read_words()
-	play(pzl)
+
+	runtime = datetime.now()
+	points = play(pzl)
+
+	print('\n'*4+'#'*32+'\n'*2)
+	print('TOTAL SCORE: '+str(points))
+	print()
+	print('TOTAL SECONDS:',(datetime.now() - runtime).seconds)
+	print()
+
 
 def read_words():
 	with open(params.PUZZLE_DATA_PATH + os.sep + 'puzzles.csv','r') as f:
@@ -22,7 +31,7 @@ def read_words():
 	for item in data:
 		word_pairs.append([x.strip() for x in item.split(params.DELIM)])
 
-	print(len(word_pairs),'pairs of words')
+	print('Playing',params.WORDS_TO_PLAY,'words from total',len(word_pairs))
 
 	#print(random.choice(word_pairs))
 	# random.sample() also shuffles the results
@@ -42,7 +51,7 @@ def play(p):
 
 			if len(letter) == 0:
 				points += params.POINTS_SKIP
-				print ('skip'+'\t'+x[1]+'\t'+str(points)+' points')
+				print ('skip'+'\t'+params.color.GREEN+x[1]+params.color.END+'\t'+str(points)+' points')
 				break
 			elif len(letter) > 1 or not letter.isalpha():
 				print('invalid')
@@ -57,14 +66,21 @@ def play(p):
 				if params.ONE_CHANCE:
 					break
 
-	print('\n'*4+'#'*32+'\n'*2+'TOTAL SCORE: '+str(points)+'\n'*2)
+	return points
 
 def get_diff(a,b):
 	return [i for i in range(len(a)) if a[i] != b[i]][0]
 
 def uncapitalize(s, i):
-	return s[:i].lower() + s[i].upper() + s[i+1:].lower()
 
+	# returns formatting for target words
+
+	# capitalized target letter
+	#return s[:i].lower() + s[i].upper() + s[i+1:].lower()
+
+	# use color class
+	return s[:i].lower() + params.color.GREEN + s[i].upper() + params.color.END + s[i+1:].lower()
+	
 if __name__ == "__main__":
 
 	main()
