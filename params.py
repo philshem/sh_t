@@ -18,6 +18,12 @@ ONE_CHANCE = False
 MIN_WORD_LENGTH = 4
 MAX_WORD_LENGTH = 10
 
+# hints
+ALLOW_HINT = True
+HINT_SIZE = 5
+POINTS_HINT = -3
+SHUFFLE_HINT = True
+
 # for formatting the target word
 # https://stackoverflow.com/a/17303428/2327328
 class color:
@@ -43,3 +49,7 @@ PUZZLE_DATA_PATH = 'data' + os.sep + 'puzzles.csv'
 
 # delimiter for data csv file
 DELIM = '\t'
+
+
+# debugging
+DEBUG = False
