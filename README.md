@@ -30,3 +30,11 @@ Each word has exactly one partner word that is one letter off. It is your job to
             Type !q and ENTER to quit
 
 To change the default scoring, edit `params.py`
+
+
+
+#### Word lists
+
+English: https://www.wordgamedictionary.com/twl06/download/twl06.txt
+
+German: https://raw.githubusercontent.com/enz/german-wordlist/master/words
